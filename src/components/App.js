@@ -3,9 +3,9 @@ import '../styles/App.css';
 
 const App = () => {
   const [inputTimer, setinputTimer] = useState(null);
-  console.log('inputTimer', inputTimer);
   const [intern, Setintern] = useState(null);
   const onkeydownss = () => {
+    Setintern(null)
     if (inputTimer != null) {
      let ineterns =  setInterval(()=>{
         setinputTimer((pre) => pre - 1)
@@ -17,10 +17,10 @@ const App = () => {
     <div className="wrapper">
       <div id="whole-center">
         <h1>
-          Reverse countdown for<input id="timeCount" onKeyDown={inputTimer ? onkeydownss : clearInterval(intern)} onChange={(e) => setinputTimer(e.target.value)} /> sec.
+          Reverse countdown for<input id="timeCount" onKeyPress={inputTimer ? onkeydownss : clearInterval(intern)} onChange={(e) => setinputTimer(e.target.value)} /> sec.
         </h1>
       </div>
-      <div id="current-time">{inputTimer && inputTimer}</div>
+      <div id="current-time">{inputTimer}</div>
     </div>
   )
 }
