@@ -21,7 +21,7 @@ const App = () => {
           Reverse countdown for
           <input
             id="timeCount"
-            onKeyPress={inputTimer ? onkeydownss : clearInterval(intern)}
+            keyDown={inputTimer ? onkeydownss : clearInterval(intern)}
             onChange={(e) => setinputTimer(e.target.value)}
           />{" "}
           sec.
